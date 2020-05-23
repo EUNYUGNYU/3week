@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" style="height: 700px;">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>detail page</title>
+
+    <style>
+
+    @font-face { font-family: 'NotoSerifKR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff'); font-weight: normal; font-style: normal; }
+    
+    body {
+        background-image : url(https://i.pinimg.com/originals/fb/9e/81/fb9e810428bbfc1cee8f9fd9d41f936a.jpg); 
+        background-repeat : no-repeat;  
+        background-size : cover;
+        text-align: center;
+        font-family: 'NotoSerifKR';
+        font-size: 17px;
+        background-color: lightgray;
+        color: blanchedalmond;
+        text-shadow: 0.5px 0.5px darkblue;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+    }
+
+
+    #navbarNav{
+        position: relative;
+        left: 15px;
+        height: 35px;
+        text-align: center;
+        padding: 0px;
+    }
+
+
+    .nav-link{
+        font-size:15px;
+        font-family: 'NotoSerifKR';
+        font-weight: bold;
+    }
+
+    #navbar-brand{
+        font-size: 16px;
+        font-family: 'NotoSerifKR';
+        font-weight: bold;
+        color: darkgrey;
+        padding: 0px 0px;
+        position: relative;
+        top: 7px;
+    }
+
+    section{
+        margin-top: 10%;
+    }
+
+    .content{
+        color:black;
+        font-weight: bold;
+        letter-spacing: 0.3em; 
+    }
+
+    .back{
+        position: relative;
+        top: 50px;
+    }
+
+    </style>
+</head>
+
+ <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="navbar-brand" ><p>바로가기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://blog.naver.com/dmsdb6934" target="_blank">NAVER BLOG</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'new' %}">글쓰기 </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+        <section>
+            <div class="content">
+                <h2>DETAIL PAGE</h2><br><br><br>
+            </div>
+                <div class="container">
+                <h1>{{ blog.title }}</h1><br><br>
+                <p>작성날짜 : {{ blog.pub_date }}</p><br><br>
+                <p>자세한 본문 : {{ blog.body}}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="back">
+        <input type="button" value="이전으로" onclick="history.back(1)">
+    </div>
+ </body>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <title>FROZEM GALARY</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+
+    <style>
+      @font-face { font-family: 'NotoSerifKR'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff'); font-weight: normal; font-style: normal; }
+     
+     body{
+        background-image : url(https://img.chuing.net/i/QVVJHy/Preview.x.jpg);
+        background-size : cover;
+        text-align: center;
+        font-family: 'NotoSerifKR';
+        font-size: 17px;
+        background-color: black;
+        color: white;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+        height: 1250px;
+    }
+
+    .navbar-brand{
+      letter-spacing: 0.5em;
+      
+    }
+
+    .card-img-top{
+      width: 700px;
+      height: 400px;
+    }
+
+    .btn-group{
+      color:darkblue;
+      border-spacing: 0.5em;
+      font-size: 14px;
+      top: 6px;
+      font-weight:700;
+      word-spacing: 0.8em;
+    }
+  
+
+    footer{
+      position: absolute;
+      top:1200px;
+      left: 60px;
+    }
+    </style>
+  </head>
+
+
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>FROZEN GALARY</strong>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+            <div class="album1">
+              {% load static %}
+              {% for portfolio in portfolios.all %}
+                <img class="card-img-top" src="{{ portfolio.image.url }}" alt=" frozen1">
+                <div class="card-body">
+                  <h3>{{ portfolio.title }}</h3>
+                  <p class="card-text">{{ portfolio.description }}</p>
+                </div>
+                <div class="btn-group">
+                  <div class="btn-group">
+                    <input type="button" value="view" onclick ="location.href='https://www.google.com/search?q=%EA%B2%A8%EC%9A%B8%EC%99%95%EA%B5%AD&sxsrf=ALeKk02CSxw7IbGHvfYhyJ-r0iWDH4eDmQ:1590221645813&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjW_7-ixcnpAhWcy4sBHZw4AgMQ_AUoAXoECBUQAw&biw=1304&bih=648'">
+                    <input type="button" value="comment" onclick ="location.href='{% url 'new' %}'">
+                  </div>
+                </div>
+            </div>
+          {% endfor %}
+          </div>
+      </div>
+      <br><br>
+            <div class="album2">
+                  <img class="card-img-top" src="{% static 'kkk.jpg' %}" alt="frozen2">
+              <div class="card-body"><h3>ELSA AND ANNA</h3> 
+                  <p class="card-text">Elsa and Anna are sisters.</p>
+              </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <input type="button" value="view" onclick ="location.href='https://www.google.com/search?q=%EA%B2%A8%EC%9A%B8%EC%99%95%EA%B5%AD&sxsrf=ALeKk02CSxw7IbGHvfYhyJ-r0iWDH4eDmQ:1590221645813&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjW_7-ixcnpAhWcy4sBHZw4AgMQ_AUoAXoECBUQAw&biw=1304&bih=648'">
+                        <input type="button" value="comment" onclick ="location.href='{% url 'new' %}'">
+                    </div>
+                  </div>
+            </div>
+    </main>
+
+          <footer class="text-muted">
+            <div class="container">
+              <p class="float-right">
+                <a href="#">Back to top</a>
+          </footer>
+      
+
+
+          <!-- Bootstrap core JavaScript
+          ================================================== -->
+          <!-- Placed at the end of the document so the pages load faster -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+          <script src="../../assets/js/vendor/popper.min.js"></script>
+          <script src="../../dist/js/bootstrap.min.js"></script>
+          <script src="../../assets/js/vendor/holder.min.js"></script>
+        </body>
+      </html>
+      

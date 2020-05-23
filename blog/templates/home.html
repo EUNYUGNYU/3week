@@ -15,13 +15,11 @@
          margin: 0;
 
      }
-
-     .box-sizing{
    
-     }       
 
      header{
-	    margin: 0px auto;
+	    margin: 0px 0px 0px 0px;
+        padding: 0px;
         border: 0.1px solid white;
 	    position: relative;
         height: 250px;
@@ -31,7 +29,7 @@
 
      img{
         height:250px;
-        max-width:2000px;
+        max-width:1285px;
         border-image: auto;
         vertical-align: middle;
         opacity: 0.8;
@@ -83,7 +81,7 @@
         left: 15px;
         height: 35px;
         text-align: center;
-        padding: 5px;
+        padding: 0px;
     }
 
 
@@ -98,15 +96,13 @@
         font-family: 'NotoSerifKR';
         font-weight: bold;
         color: darkgrey;
-        padding: 0px 10px;
+        padding: 0px 0px;
         position: relative;
         top: 7px;
     }
 
     main{
-        width: 1255px;
-        height: 600px;
-
+        width: 1285px;
     }
 
     #aside{
@@ -120,13 +116,13 @@
         line-height: 250px;
         position: relative;
         bottom:600px;
-        left:30px;
+        left:0px;
         font-family: 'NotoSerifKR';
         
     }
 
     article{
-        width: 984px;
+        width: 985px;
         border:0.1px solid white;
         box-sizing: border-box;
         height: 600px;
@@ -158,17 +154,10 @@
         top: 40px;
     }
 
-    #img3{
-        height: 230px;
-        float:left;
-        position: relative;
-        bottom: 92px;
-
-    }
-
     #box{
         box-sizing: border-box;
         height: 1000px;
+        weight: 1285px;
     }
 
     #top{
@@ -184,6 +173,8 @@
     }
 
 
+    .navbar{
+        width: 1285px;
     }
 </style>
 </head>
@@ -194,7 +185,7 @@
     <div id="box">
     <header>
     <div class="img">
-        <img src="https://c.pxhere.com/photos/f2/05/abstract_astro_astronomy_background_background_image_beautiful_constellation_cosmos-1563999.jpg!d" alt="My Image" width="1285px">
+        <img src="https://c.pxhere.com/photos/f2/05/abstract_astro_astronomy_background_background_image_beautiful_constellation_cosmos-1563999.jpg!d" alt="My Image" width="1295px">
             <div class="blogname">
                 <h1>EUNYU'S BLOG</h1>
             </div>
@@ -213,6 +204,9 @@
             <li class="nav-item">
               <a class="nav-link" href="https://blog.naver.com/dmsdb6934" target="_blank">NAVER BLOG</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'new' %}">글쓰기 </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -227,10 +221,9 @@
                     <div class="container">
                         <h1>{{ blog.title }}</h1>
                         <p>{{ blog.pub_date }}</p>
-                        <p>{{ blog.body }}</p>
+                        <p>{{ blog.summary}}<a href="{%url 'detail' blog.id%}"><br>...more</a></p>
                     </div>    
                 {% endfor %}
-                    <img id="img3" src="https://imgnn.seoul.co.kr/img/upload/2015/08/17/SSI_20150817161525_V.jpg" hrdf="pet">
                 </article>           
             </div>
             <aside id="aside">
